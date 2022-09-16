@@ -265,9 +265,10 @@ sub {
 }
 .weather-inner-data:hover {
   transform: scale(1.3);
-  background: #205c97;
+  background: #FFF;
   transition: .3s;
   cursor: pointer;
+  color: #000;
 }
 .cls-btn {
   right: -15px;
@@ -329,4 +330,7 @@ li.day:hover {
   .weather-inner-data {
     width: 30%;  
   }
+  .d-flex.w-100.justify-content-space-around.align-item-center {
+    flex-direction: column;
+}
 }

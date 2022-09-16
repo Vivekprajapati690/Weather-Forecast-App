@@ -1,38 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;600&display=swap');
+*{
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+html{
+  background: #467aac;
+
+}
+h1{color: #fff;}
+body{
+  font-family: 'Outfit', sans-serif;
+}
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  width: 100%;
+}
+.row{
+  display: flex;
+ }
+ 
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ 
+li.day {
+  display: inline-block;
+  text-align: center;
+  margin: 0px 5px 5px 5px;
+  background: #f6f6f6;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 180px;
+  position: relative;
+  box-shadow: 2px 2px 20px 3px #00000054;
+}
+button.btn.hidden {
+  display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.today-date{
+  background: #FFF;
+  padding: 10px;
+  border-radius: 50px;
+  color: #000;
+  font-weight: 900;
+}
+ul.days {
+  list-style-type: none;
+  max-width: 100%;
+ 
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+  padding: 0;
+   
+}
+.loading {
+  position: relative;
+}
+.loading::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: linear-gradient(.25turn,transparent,#6390b5,transparent),linear-gradient(#eee,#eee),radial-gradient(38px circle at 19px 19px,#eee 50%,transparent 51%),linear-gradient(#eee,#eee);
+    background-repeat: no-repeat;
+    background-size: 315px 250px,315px 180px,100px 100px,225px 30px;
+    background-position: -315px 0,0 0,0px 190px,50px 195px;
+    animation: loading .8s infinite;
+}
+@keyframes loading {
+  100% {
+    background-position: 35px 0,0 0,0 190px,50px 195px;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+span.todays-temp sup {
+  font-size: 1.3rem;
+}
+span.todays-temp {
+  font-size: 3rem;
+}
+ 
+span.area-title {
+  font-size: 2rem;
+}
+.mutted{
+  opacity: 0.6;
+}
+.today-data {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
+}
+.minmax_temp {
+  display: inherit;
+}
+.minmax_temp span {
+  padding: 20px;
+}
+.minmax_temp svg {
+  width: 15px;
+}
+.cst-ico {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.minmax_temp span {
+  padding: 20px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.minmax_temp svg {
+  padding-right: 10px;
+}
+
+.flex-adjust {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('../public/images/icons/partlysunny_day.png');
+  color: #FFF;
+  background-repeat: no-repeat;
+    background-size: cover;
+}
+p.weather-description {
+  font-size: 1.2rem;
+}
+.btn {
+  background: #ffeb3b;
+  color: #000;
+  font-weight: 600;
+  padding: 10px 13px;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  box-shadow: -1px 0px 6px 4px #00000045;
+}
+.col-6 {
+  flex: 1 1;
+  margin: 5px;
+  background-color: aliceblue;
+  border-radius: 4px;
+}
+.pos-relative {
+  position: relative;
+}
+.pos-absolute{
+  position: absolute;
+}
+.next-prev-con {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  top: 0;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+
+.btn:hover {
+  background: #333;
+  transition: 0.3s;
+  color: #FFF;
+}
+.push-up{
+  z-index: 10;
+}
+.other-wether-data {
+  width: 100%;
+}
+
+.weather-inner-data {
+  display: inline-block;
+  width: 19%;
+  background: #FFF2;
+  margin: 2px;
+  border-radius: 4px;
+  transition: .1s;
+}
+
+.d-flex{
+  display: flex;
+}
+.align-item-center{
+  align-items: center;
+  
+}
+.justify-content-center{
+  justify-content: center;
+  
+}
+.justify-content-end{
+  justify-content: end;
+  
+}
+.flex-direction-column{
+  flex-direction: column;
+}
+.flex-direction-row{
+  flex-direction: row;
+}
+.w-100{
+  width: 100%;
+}
+.w-50{
+  width: 50%;
+}
+.w-40{
+  width: 40%;
+}
+
+.justify-content-space-around{
+  justify-content: space-around;
+  
+}
+li.day img {
+  width: 70px;
+}
+
+p.date-con {
+  position: absolute;
+  background: #60bae5;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-right-radius: 50%;
+  bottom: 50%;
+  left: 0;
+  color: #FFF;
+  border-top-right-radius: 50%;z-index: 1;
+} 
+sub {
+  font-size: 10px;
+  margin-left: 5px;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #000B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  z-index: 99;
+}
+.weather-inner-data:hover {
+  transform: scale(1.3);
+  background: #205c97;
+  transition: .3s;
+  cursor: pointer;
+}
+.cls-btn {
+  right: -15px;
+  top: -15px;
+  cursor: pointer;
+}
+li.day:hover {
+  cursor: pointer;
+  background: #FFF;
+  transition: .3s;
+  transform: scale(1.1);
+  z-index: 11;
+}
+
+.popup-body {
+  background: #FFF;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 5px 4px 20px 0px #000000a8;
+}
+.popup-body .weather-inner-data {
+  width: 60%;
+  text-align: center;
+}
+.popup-body .weather-inner-data p:first-child {
+  color: orange;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.popup-body .weather-inner-data p:nth-child(2) {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 0;
+}
+.weather-inner-data p:nth-child(1) {
+  font-size: 12px;
+  font-weight: 100;
+}
+.weather-inner-data p:nth-child(2) {
+  font-size: 14px;
+  font-weight: 600;
+}
+.popup-body .other-wether-data {
+  overflow: hidden;
+  text-align: center;
+}
+@media only screen and (max-width: 850px) {
+  .row{
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 500px) {
+  .row{
+    display: block;
+  }
+  .weather-inner-data {
+    width: 30%;  
   }
 }
